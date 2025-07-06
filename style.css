@@ -344,11 +344,6 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   opacity: 0.9;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
-  background-color: red; /* oder eine andere Farbe */
-  border-radius: 50%; /* macht es rund */
-  border: 2px solid white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  cursor: pointer;
 }
 
 .no-touch .link-hotspot:hover {
