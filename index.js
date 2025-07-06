@@ -89,10 +89,20 @@
     });
 
     // Create link hotspots.
-    data.linkHotspots.forEach(function(hotspot) {
-      var element = createLinkHotspotElement(hotspot);
-      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
-    });
+    function createLinkHotspotElement(hotspot) {
+  var wrapper = document.createElement("div");
+  wrapper.classList.add("link-hotspot");
+
+  // Kein Icon mehr (Bild wird nicht mehr gebraucht)
+  // Kein Tooltip – optional
+  // Nur ein klickbarer Punkt
+
+  wrapper.addEventListener("click", function () {
+    switchScene(findSceneById(hotspot.target));
+  });
+
+  return wrapper;
+}
 
     // Create info hotspots.
     data.infoHotspots.forEach(function(hotspot) {
