@@ -89,20 +89,10 @@
     });
 
     // Create link hotspots.
-  function createLinkHotspotElement(hotspot) {
-  var wrapper = document.createElement('div');
-  wrapper.style.width = '20px';
-  wrapper.style.height = '20px';
-  wrapper.style.background = 'red';
-  wrapper.style.borderRadius = '50%';
-  wrapper.style.position = 'absolute';
-  wrapper.style.cursor = 'pointer';
-  
-  // Klick-Event zum Wechseln der Szene
-  wrapper.addEventListener('click', function() {
-    console.log("Hotspot geklickt, wechsle zu:", hotspot.target);
-    switchScene(findSceneById(hotspot.target));
-  });
+  data.linkHotspots.forEach(function(hotspot) {
+  var element = createLinkHotspotElement(hotspot);
+  scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
+});
   
   return wrapper;
 }
