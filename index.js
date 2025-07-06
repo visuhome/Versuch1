@@ -89,16 +89,21 @@
     });
 
     // Create link hotspots.
-    function createLinkHotspotElement(hotspot) {
-  // Hotspot-Wrapper
-  var wrapper = document.createElement("div");
-  wrapper.classList.add("link-hotspot");
-
-  // Klickfunktion: Szene wechseln
-  wrapper.addEventListener("click", function () {
+  function createLinkHotspotElement(hotspot) {
+  var wrapper = document.createElement('div');
+  wrapper.style.width = '20px';
+  wrapper.style.height = '20px';
+  wrapper.style.background = 'red';
+  wrapper.style.borderRadius = '50%';
+  wrapper.style.position = 'absolute';
+  wrapper.style.cursor = 'pointer';
+  
+  // Klick-Event zum Wechseln der Szene
+  wrapper.addEventListener('click', function() {
+    console.log("Hotspot geklickt, wechsle zu:", hotspot.target);
     switchScene(findSceneById(hotspot.target));
   });
-
+  
   return wrapper;
 }
 
