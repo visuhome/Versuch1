@@ -90,19 +90,18 @@
 
     // Create link hotspots.
     function createLinkHotspotElement(hotspot) {
+  // Hotspot-Wrapper
   var wrapper = document.createElement("div");
   wrapper.classList.add("link-hotspot");
 
-  // Kein Icon mehr (Bild wird nicht mehr gebraucht)
-  // Kein Tooltip – optional
-  // Nur ein klickbarer Punkt
-
+  // Klickfunktion: Szene wechseln
   wrapper.addEventListener("click", function () {
     switchScene(findSceneById(hotspot.target));
   });
 
   return wrapper;
 }
+
 
     // Create info hotspots.
     data.infoHotspots.forEach(function(hotspot) {
